@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
         //Default page to load on website start
-        "/"(controller: "Home", action: "index")
+        "/"(controller: "Home")
         "500"(view:'/error')
 	}
 }

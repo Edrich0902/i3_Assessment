@@ -17,8 +17,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-            <!--Navigation to be placed here-->
-            
+            <!--Navigation to be placed here--> 
             <g:layoutBody/>
 	</body>
 </html>

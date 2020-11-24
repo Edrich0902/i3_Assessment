@@ -1,1 +1,106 @@
 /*This is the main CSS file to be used throughout the application*/
+:root
+{
+    --textWhite: #F3F3F3;
+    --textBlack: #000000;
+    --buttonColor: #03AAFB;
+    --buttonColorSecond: #909090;
+    --background: #03AAFB;
+    --hoverColor: #0066cc;
+}
+
+body
+{
+    background: var(--textWhite);
+    font-family: sans-serif, monospace;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#welcomeTitle
+{
+    text-align: center;
+    font-size: 30px;
+}
+
+/*By default register should not display*/
+#register
+{
+    display: none;
+}
+
+#container
+{
+    background: var(--buttonColorSecond);
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+}
+
+.tab
+{
+    background: var(--textBlack);
+    display: flex;
+    justify-content: center;
+    height: 35px;
+}
+
+.tablinks
+{
+    background: var(--textBlack);
+    border: none;
+    font-family: sans-serif, monospace;
+    color: var(--textWhite);
+    width: 100%;
+    transition: 0.4s ease-in-out;
+}
+
+.tablinks:hover
+{
+    background: var(--hoverColor);
+}
+
+.tab input.active
+{
+    background: var(--buttonColor);
+}
+
+#loginBut
+{
+    background: var(--buttonColor);
+    font-family: sans-serif, monospace;
+    color: var(--textWhite);
+    border: none;
+    height: 25px;
+    width: 150px;
+    transition: 0.4s ease-in-out;
+}
+
+#loginBut:hover
+{
+    background: var(--hoverColor);
+}
+
+#loginForm
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 250px;
+}
+
+#loginForm *
+{
+    margin: 5px;
+}
+
+#loginForm input
+{
+    height: 20px;
+    width: 200px;
+}
