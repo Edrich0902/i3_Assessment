@@ -26,6 +26,12 @@
             
             <div id="register">
                 <g:form id="registerForm" name="registerForm" url="[controller:'user', action:'register']">
+                    <label>Name</label>
+                    <g:textField name="name"/>
+                    <label>Surname</label>
+                    <g:textField name="surname"/>
+                    <label>Starting Balance</label>
+                    <g:textField name="balance"/>
                     <label>Username</label>
                     <g:textField name="username"/>
                     
