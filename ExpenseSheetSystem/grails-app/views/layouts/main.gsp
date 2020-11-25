@@ -17,7 +17,18 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-            <!--Navigation to be placed here--> 
+            <!--Navigation to be placed here-->
+            <div id="navbar">
+                <span id="navTitle">Expense Sheet System</span>
+                
+                <div id="navlinks">
+                    <ul>
+                        <li><g:link controller="user" action="redirect" params="[destination: 'home']">Home</g:link></li>
+                        <li><g:link controller="user" action="redirect" params="[destination: 'transactions']">Transactions</g:link></li>
+                    </ul>
+                </div>
+            </div>
+                
             <g:layoutBody/>
 	</body>
 </html>

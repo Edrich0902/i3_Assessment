@@ -1,21 +1,20 @@
+<!--
+  To change this license header, choose License Headers in Project Properties.
+  To change this template file, choose Tools | Templates
+  and open the template in the editor.
+-->
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
     <head>
         <meta name='layout' content='main'/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Dashboard</title>
+        <title>Transactions</title>
     </head>
     <body>
-        <div id="userDetails">
-            <h3 id="userWelcome">Welcome ${user.username}</h3>
-            <div id="balanceContainer">
-                <h5>Balance: R${user.balance}</h5>
-            </div>
-        </div>
-        
-        <h4 id="recentTransactionsTitle">Recent Transactions</h4>
-        
+        <h4 id="recentTransactionsTitle">Transactions</h4>
+        <!--Lists all the transactions for a user-->
         <div id="transactionsContainer">      
             <g:if test="${transactions}">
                 <g:each in="${transactions}" status="i" var="transaction">

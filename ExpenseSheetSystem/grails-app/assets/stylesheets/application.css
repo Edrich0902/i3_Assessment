@@ -18,6 +18,7 @@ body
     height: 100%;
 }
 
+/*Login and registration CSS*/
 #welcomeTitle
 {
     text-align: center;
@@ -141,4 +142,117 @@ body
 {
     height: 20px;
     width: 200px;
+}
+
+/*Navigation CSS*/
+#navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--buttonColor);
+    color: var(--textWhite);
+}
+
+#navbar *
+{
+    margin: 5px;
+}
+
+#navTitle
+{
+    font-size: 20px;
+}
+
+#navlinks ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navlinks ul li
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+
+#navlinks ul li a
+{
+    text-decoration: none;
+    color: var(--textWhite);
+}
+
+#navlinks ul li a:after
+{
+    content: "";
+    display: block;
+    border-bottom: 1px solid var(--hoverColor);
+    transition: 0.4s ease-in-out;
+    transform: scaleX(0);
+}
+
+#navlinks ul li a:hover:after
+{
+    transform: scaleX(1);
+}
+
+/*Dash CSS*/
+#userDetails
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#userDetails *
+{
+    margin: 10px;
+    padding: 5px;
+}
+
+#balanceContainer
+{
+    background: var(--hoverColor);
+    color: var(--textWhite);
+}
+
+#recentTransactionsTitle
+{
+    margin: 10px;
+    padding: 5px;
+}
+
+#transactionsContainer
+{
+    margin: 10px;
+    padding: 5px;
+}
+
+.transaction
+{
+    display: flex;
+    flex-direction: column;
+    background: var(--buttonColor);
+    color: var(--textWhite);
+    margin-bottom: 10px;
+}
+
+.transaction *
+{
+    margin: 5px;
+}
+
+#details
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#value
+{
+    text-align: right;
 }

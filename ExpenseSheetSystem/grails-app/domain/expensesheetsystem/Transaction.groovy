@@ -18,6 +18,6 @@ class Transaction {
     static mapping = {
         table 'transactions'
         id column: 'transactionID'
-        user column: 'userID'
+        user column: 'userID' //Allows you to find all transactions specific to one user
     }
 }
