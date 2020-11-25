@@ -2,6 +2,23 @@ package expensesheetsystem
 /*Controls the creation of transactions*/
 class TransactionController {
 
+    def newTransaction()
+    {
+        def user = User.findByUsername(session.user)
+        
+        def transaction = new Transaction(
+            user: user,
+            value: params.value,
+            date: params.date,
+            description: params.description
+        )
+        
+        transaction.save flush: true, failOnError: true
+
+        
+        redirect action:"list", params:[username:user.username]
+    }
+    
     def index() { }
     
     def createNew()
@@ -19,11 +36,5 @@ class TransactionController {
         def transactions = Transaction.findAllByUser(user)
         //returns the logged in user to the dash
         [user:user, transactions:transactions]
-    }
-    
-    //Create a new transaction
-    def test() 
-    {
-        render "Test"
     }
 }

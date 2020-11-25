@@ -9,9 +9,9 @@
     <body>
         <h4 id="newTransactionTitle">Create new transaction</h4>
         
-        <g:form id="newTransactionForm" name="newTransactionForm" url="[controller:'transaction', action:'test']">
+        <g:form id="newTransactionForm" name="newTransactionForm" url="[controller:'transaction', action:'newTransaction']">
             <label>Value</label>
-            <g:textField name="value"/>
+            <g:field name="value" type="decimal"/>
             <label>Date</label>
             <span id="dateInput"><g:datePicker name="date"/></span>
             <label>Description</label>
@@ -19,7 +19,7 @@
             <label>User</label>
             <g:field name="user" readonly="readonly" value="${user}"/>
                      
-            <g:actionSubmit value="Create" id="newTransactionSubmit"/>
-        </g:form>
+            <g:actionSubmit value="Create" action="newTransaction" id="newTransactionSubmit"/>
+        </g:form>    
     </body>
 </html>
