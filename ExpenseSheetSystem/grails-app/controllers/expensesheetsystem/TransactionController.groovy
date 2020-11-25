@@ -15,6 +15,12 @@ class TransactionController {
         
         transaction.save flush: true, failOnError: true
 
+        def value = params.value as float
+        def balance = user.balance as float
+        def newBalance = balance - value
+        
+        user.balance = newBalance as float
+        user.save flush:true, failOnError:true
         
         redirect action:"list", params:[username:user.username]
     }
