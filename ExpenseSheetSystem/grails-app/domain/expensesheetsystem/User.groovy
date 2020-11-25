@@ -7,10 +7,17 @@ class User {
     float balance
     String username
     
+    static hasMany = [transactions: Transaction]
+    
     static constraints = {
         name blank: false
         surname blank: false
         balance blank: false
         username blank: false
+    }
+    
+    static mapping = {
+        table 'users'
+        id column: 'userID'
     }
 }

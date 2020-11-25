@@ -104,3 +104,41 @@ body
     height: 20px;
     width: 200px;
 }
+
+#registerBut
+{
+    background: var(--buttonColor);
+    font-family: sans-serif, monospace;
+    color: var(--textWhite);
+    border: none;
+    height: 25px;
+    width: 150px;
+    transition: 0.4s ease-in-out;
+}
+
+#registerBut:hover
+{
+    background: var(--hoverColor);
+}
+
+#registerForm
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 250px;
+}
+
+#registerForm *
+{
+    margin: 5px;
+}
+
+#registerForm input
+{
+    height: 20px;
+    width: 200px;
+}
