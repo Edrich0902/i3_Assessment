@@ -33,5 +33,9 @@
                 <h4>No Transactions</h4>
             </g:else>
         </div>
+        
+        <g:link controller='transaction' action='createNew'>
+            <input type="button" value="New Transaction" id="newTransactionBut"/>
+        </g:link>
     </body>
 </html>

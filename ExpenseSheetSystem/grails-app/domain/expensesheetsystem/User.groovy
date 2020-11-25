@@ -20,4 +20,9 @@ class User {
         table 'users'
         id column: 'userID'
     }
+    
+    String toString()
+    {
+        name
+    }
 }

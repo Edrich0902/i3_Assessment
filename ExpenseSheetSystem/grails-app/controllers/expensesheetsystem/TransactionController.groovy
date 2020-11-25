@@ -5,7 +5,26 @@ class TransactionController {
     def index() { }
     
     //Create a new transaction
-    def newTransaction() { }
+    def newTransaction() 
+    {
+        def transaction = new Transaction(
+            user: params.user,
+            value: params.value,
+            date: params.date,
+            description: params.description
+        )
+        
+        transaction.save flush: true, failOnError: true
+        def user = User.findByUsername(session.user)
+        
+        redirect action:'list', params:[username:user.username]
+    }
+    
+    def createNew()
+    {
+        def user = User.findByUsername(session.user)
+        [user:user]
+    }
     
     //List all the transactions for a user
     def list()
