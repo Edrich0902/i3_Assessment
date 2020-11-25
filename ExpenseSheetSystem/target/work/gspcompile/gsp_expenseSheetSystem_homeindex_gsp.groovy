@@ -14,55 +14,65 @@ registerSitemeshPreprocessMode()
 printHtmlPart(0)
 createTagBody(1, {->
 printHtmlPart(1)
-invokeTag('captureMeta','sitemesh',5,['gsp_sm_xmlClosingForEmptyTag':(""),'name':("layout"),'content':("main")],-1)
-printHtmlPart(1)
-invokeTag('captureMeta','sitemesh',6,['gsp_sm_xmlClosingForEmptyTag':(""),'http-equiv':("Content-Type"),'content':("text/html; charset=UTF-8")],-1)
+invokeTag('captureMeta','sitemesh',5,['gsp_sm_xmlClosingForEmptyTag':(""),'http-equiv':("Content-Type"),'content':("text/html; charset=UTF-8")],-1)
 printHtmlPart(1)
 createTagBody(2, {->
 createClosureForHtmlPart(2, 3)
-invokeTag('captureTitle','sitemesh',7,[:],3)
+invokeTag('captureTitle','sitemesh',6,[:],3)
 })
-invokeTag('wrapTitleTag','sitemesh',7,[:],2)
+invokeTag('wrapTitleTag','sitemesh',6,[:],2)
 printHtmlPart(3)
-})
-invokeTag('captureHead','sitemesh',8,[:],1)
-printHtmlPart(3)
-createTagBody(1, {->
+invokeTag('captureMeta','sitemesh',8,['gsp_sm_xmlClosingForEmptyTag':(""),'name':("viewport"),'content':("width=device-width, initial-scale=1.0")],-1)
 printHtmlPart(4)
-createTagBody(2, {->
+expressionOut.print(assetPath(src: 'favicon.ico'))
 printHtmlPart(5)
-invokeTag('textField','g',21,['name':("username")],-1)
+expressionOut.print(assetPath(src: 'apple-touch-icon.png'))
 printHtmlPart(6)
-invokeTag('actionSubmit','g',23,['value':("Login"),'id':("loginBut")],-1)
+expressionOut.print(assetPath(src: 'apple-touch-icon-retina.png'))
 printHtmlPart(7)
-})
-invokeTag('form','g',24,['id':("loginForm"),'name':("loginForm"),'url':([controller:'user', action:'login'])],2)
+invokeTag('stylesheet','asset',12,['src':("application.css")],-1)
 printHtmlPart(8)
-createTagBody(2, {->
+invokeTag('javascript','asset',13,['src':("application.js")],-1)
 printHtmlPart(9)
-invokeTag('textField','g',30,['name':("name")],-1)
+})
+invokeTag('captureHead','sitemesh',14,[:],1)
+printHtmlPart(9)
+createTagBody(1, {->
 printHtmlPart(10)
-invokeTag('textField','g',32,['name':("surname")],-1)
+createTagBody(2, {->
 printHtmlPart(11)
-invokeTag('textField','g',34,['name':("balance")],-1)
-printHtmlPart(5)
-invokeTag('textField','g',36,['name':("username")],-1)
-printHtmlPart(6)
-invokeTag('actionSubmit','g',38,['value':("Register"),'id':("registerBut")],-1)
-printHtmlPart(7)
-})
-invokeTag('form','g',39,['id':("registerForm"),'name':("registerForm"),'url':([controller:'user', action:'register'])],2)
+invokeTag('textField','g',27,['name':("username")],-1)
 printHtmlPart(12)
-})
-invokeTag('captureBody','sitemesh',42,[:],1)
+invokeTag('actionSubmit','g',29,['value':("Login"),'id':("loginBut")],-1)
 printHtmlPart(13)
+})
+invokeTag('form','g',30,['id':("loginForm"),'name':("loginForm"),'url':([controller:'user', action:'login'])],2)
+printHtmlPart(14)
+createTagBody(2, {->
+printHtmlPart(15)
+invokeTag('textField','g',36,['name':("name")],-1)
+printHtmlPart(16)
+invokeTag('textField','g',38,['name':("surname")],-1)
+printHtmlPart(17)
+invokeTag('textField','g',40,['name':("balance")],-1)
+printHtmlPart(11)
+invokeTag('textField','g',42,['name':("username")],-1)
+printHtmlPart(12)
+invokeTag('actionSubmit','g',44,['value':("Register"),'id':("registerBut")],-1)
+printHtmlPart(13)
+})
+invokeTag('form','g',45,['id':("registerForm"),'name':("registerForm"),'url':([controller:'user', action:'register'])],2)
+printHtmlPart(18)
+})
+invokeTag('captureBody','sitemesh',50,[:],1)
+printHtmlPart(19)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1606247122072L
+public static final long LAST_MODIFIED = 1606251157121L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

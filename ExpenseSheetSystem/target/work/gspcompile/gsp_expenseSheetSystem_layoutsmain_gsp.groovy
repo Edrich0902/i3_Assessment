@@ -45,18 +45,24 @@ invokeTag('captureHead','sitemesh',18,[:],1)
 printHtmlPart(6)
 createTagBody(1, {->
 printHtmlPart(7)
-invokeTag('layoutBody','g',21,[:],-1)
+createClosureForHtmlPart(8, 2)
+invokeTag('link','g',26,['controller':("user"),'action':("redirect"),'params':([destination: 'home'])],2)
+printHtmlPart(9)
+createClosureForHtmlPart(10, 2)
+invokeTag('link','g',27,['controller':("user"),'action':("redirect"),'params':([destination: 'transactions'])],2)
+printHtmlPart(11)
+invokeTag('layoutBody','g',32,[:],-1)
 printHtmlPart(6)
 })
-invokeTag('captureBody','sitemesh',22,[:],1)
-printHtmlPart(8)
+invokeTag('captureBody','sitemesh',33,[:],1)
+printHtmlPart(12)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1606228585720L
+public static final long LAST_MODIFIED = 1606300000025L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
