@@ -9,7 +9,7 @@
     <body>
         <h4 id="newTransactionTitle">Create new transaction</h4>
         
-        <g:form id="newTransactionForm" name="newTransactionForm" url="[controller:'transaction', action:'newTransaction']">
+        <g:form id="newTransactionForm" name="newTransactionForm" url="[controller:'transaction', action:'test']">
             <label>Value</label>
             <g:textField name="value"/>
             <label>Date</label>
