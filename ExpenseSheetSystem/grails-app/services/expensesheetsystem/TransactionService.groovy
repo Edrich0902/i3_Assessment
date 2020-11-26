@@ -2,9 +2,6 @@ package expensesheetsystem
 
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
-import org.hsqldb.util.CSVWriter
-
-import grails.util.GrailsUtil
 
 @Transactional
 class TransactionService {
@@ -32,22 +29,5 @@ class TransactionService {
         def dollar = value*conv
         
         dollar.round(2)
-    }
-    
-    def export(def user, def transactions)
-    {
-        def outputFilePath = "/Desktop/transactions.csv"
-        
-        File csvFile = new File(outputFilePath)
-        csvFile.createNewFile()
-        
-        csvFile.withWriter{ writer->
-            CSVWriter csvWriter = new CSVWriter(writer)
-            
-            for(transaction in transactions)
-            {
-                csvWriter.writeNext([transaction.id, transaction.description, transaction.value])
-            }
-        }
     }
 }

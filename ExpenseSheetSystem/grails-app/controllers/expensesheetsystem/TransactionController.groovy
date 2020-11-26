@@ -1,4 +1,5 @@
 package expensesheetsystem
+
 /*Controls the creation of transactions*/
 class TransactionController {
 
@@ -50,13 +51,30 @@ class TransactionController {
     }
     
     def export()
-    {
+    {        
+        response.setHeader("Content-disposition", "attachment; filename=transaction_list.csv")
+        
         def user = User.findByUsername(session.user)
         def transactions = Transaction.findAllByUser(user)
         
+        def results = []
+        for(transaction in transactions)
+        {
+             def r = [transaction.id, transaction.description, transaction.date, transaction.value, transactionService.convertCurrency(transaction.value)]
+             results << r
+        } 
         
-        transactionService.export(user, transactions)
+        def result = "ID, Description, Date, Value, Dollar Value,\n"
+        results.each{ row->
+            row.each{
+                col-> result = result + col + ","
+            }
+            result = result[0..-2]
+            result = result + "\n"
+        }
         
-        redirect action:"list", params:[username:user.username]
+        println result
+        
+        render contentType:"text/csv", text:result
     }
 }
