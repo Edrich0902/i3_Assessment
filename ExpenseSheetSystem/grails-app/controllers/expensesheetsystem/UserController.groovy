@@ -52,8 +52,9 @@ class UserController {
     {
         //gets the registered or logged in user by their username
         def user = User.findByUsername(params.username)
-        //gets the list of transactions for the logged in user
-        def transactions = Transaction.findAllByUser(user)
+        //gets the 3 most recent transactions by a user
+        def transactions = Transaction.findAllByUser(user, [sort:"date", order:"desc", max:3])
+
         //returns the logged in user to the dash
         [user:user, transactions:transactions]
     }
