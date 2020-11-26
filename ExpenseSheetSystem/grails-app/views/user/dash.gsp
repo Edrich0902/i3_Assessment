@@ -7,6 +7,7 @@
         <title>Dashboard</title>
     </head>
     <body>
+        <g:set var="service" bean="transactionService"/>
         <div id="userDetails">
             <h3 id="userWelcome">Welcome ${user.username}</h3>
             <div id="balanceContainer">
@@ -27,6 +28,7 @@
                         <span>${transaction.description}</span>
 
                         <span id="value">Amount: R${transaction.value}</span>
+                        <span id="dollarValue">Dollar: $ ${service.convertCurrency(transaction.value)}</span>
                     </div>
                 </g:each>
             </g:if>

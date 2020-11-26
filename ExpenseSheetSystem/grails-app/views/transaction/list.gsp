@@ -13,6 +13,7 @@
         <title>Transactions</title>
     </head>
     <body>
+        <g:set var="service" bean="transactionService"/>
         <h4 id="recentTransactionsTitle">Transactions</h4>
         <!--Lists all the transactions for a user-->
         <div id="transactionsContainer">      
@@ -26,6 +27,7 @@
                         <span>${transaction.description}</span>
 
                         <span id="value">Amount: R${transaction.value}</span>
+                        <span id="dollarValue">Dollar: $ ${service.convertCurrency(transaction.value)}</span>
                     </div>
                 </g:each>
             </g:if>

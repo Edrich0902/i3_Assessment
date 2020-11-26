@@ -2,6 +2,10 @@ package expensesheetsystem
 /*Controls the creation of transactions*/
 class TransactionController {
 
+    /*Creates and stores a new transaction in the database
+     * Also modifies the user's balance according to the value
+     * of the new transaction
+     * */
     def newTransaction()
     {
         def user = User.findByUsername(session.user)
@@ -12,16 +16,16 @@ class TransactionController {
             date: params.date,
             description: params.description
         )
-        
+        //save transaction to the database
         transaction.save flush: true, failOnError: true
 
         def value = params.value as float
         def balance = user.balance as float
         def newBalance = balance - value
-        
+        //updates the user's balance
         user.balance = newBalance as float
         user.save flush:true, failOnError:true
-        
+        //redirects to the list of transactions on completion of above code
         redirect action:"list", params:[username:user.username]
     }
     

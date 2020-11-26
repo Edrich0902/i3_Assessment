@@ -252,7 +252,7 @@ body
     margin: 0;
 }
 
-#value
+#value, #dollarValue
 {
     text-align: right;
 }
