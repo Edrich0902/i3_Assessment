@@ -2,6 +2,7 @@ package expensesheetsystem
 /*Controls the creation of transactions*/
 class TransactionController {
 
+    TransactionService transactionService
     /*Creates and stores a new transaction in the database
      * Also modifies the user's balance according to the value
      * of the new transaction
@@ -46,5 +47,16 @@ class TransactionController {
         def transactions = Transaction.findAllByUser(user)
         //returns the logged in user to the dash
         [user:user, transactions:transactions]
+    }
+    
+    def export()
+    {
+        def user = User.findByUsername(session.user)
+        def transactions = Transaction.findAllByUser(user)
+        
+        
+        transactionService.export(user, transactions)
+        
+        redirect action:"list", params:[username:user.username]
     }
 }

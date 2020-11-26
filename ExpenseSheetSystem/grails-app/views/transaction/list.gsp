@@ -39,5 +39,9 @@
         <g:link controller='transaction' action='createNew'>
             <input type="button" value="New Transaction" id="newTransactionBut"/>
         </g:link>
+        
+        <g:link controller='transaction' action='export'>
+            <input type="button" value="Export" id="newTransactionBut"/>
+        </g:link>
     </body>
 </html>
