@@ -12,21 +12,22 @@ class TransactionController {
     {
         def user = User.findByUsername(session.user)
         
-        def transaction = new Transaction(
-            user: user,
-            value: params.value,
-            date: params.date,
-            description: params.description
-        )
-        //save transaction to the database
-        transaction.save flush: true, failOnError: true
-
         def value = params.value as float
         def balance = user.balance as float
         def newBalance = balance - value
         //updates the user's balance
         user.balance = newBalance as float
         user.save flush:true, failOnError:true
+        
+        def transaction = new Transaction(
+            user: user,
+            value: params.value,
+            date: params.date,
+            description: params.description,
+            runningBalance: newBalance
+        )
+        //save transaction to the database
+        transaction.save flush: true, failOnError: true
         //redirects to the list of transactions on completion of above code
         redirect action:"list", params:[username:user.username]
     }
@@ -60,11 +61,11 @@ class TransactionController {
         def results = []
         for(transaction in transactions)
         {
-             def r = [transaction.id, transaction.description, transaction.date, transaction.value, transactionService.convertCurrency(transaction.value)]
+             def r = [transaction.id, transaction.description, transaction.date, transaction.value, transactionService.convertCurrency(transaction.value), transaction.runningBalance]
              results << r
         } 
         
-        def result = "ID, Description, Date, Value, Dollar Value,\n"
+        def result = "ID, Description, Date, Value, Dollar Value, Running Balance\n"
         results.each{ row->
             row.each{
                 col-> result = result + col + ","

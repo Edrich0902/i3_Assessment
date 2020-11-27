@@ -29,6 +29,7 @@
 
                         <span id="value">Amount: R${transaction.value}</span>
                         <span id="dollarValue">Dollar: $ ${service.convertCurrency(transaction.value)}</span>
+                        <span id="runningBalance">Balance: R${transaction.runningBalance}</span>
                     </div>
                 </g:each>
             </g:if>

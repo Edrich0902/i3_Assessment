@@ -5,6 +5,7 @@ class Transaction {
     float value
     Date date
     String description
+    float runningBalance
     User user
     
     static belongsTo = [user:User]
@@ -13,6 +14,7 @@ class Transaction {
         value blank: false
         date blank: false
         description blank: false
+        runningBalance blank: false
     }
     
     static mapping = {
